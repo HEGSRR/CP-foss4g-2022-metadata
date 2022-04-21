@@ -45,7 +45,8 @@ These are structured repositories for research projects containing the computati
 The repositories are commonly maintained in a version control system, e.g. Git, in order to maintain a history of every change to the research project over time.
 Open geographic information science would benefit from a standardized structure to research compendia, organizing data into raw, scratch/temporary, and derived directories and further into publicly shareable and private or embargoed directories.
 This data organization should be structured, indexed, and documented with metadata within repositories to facilitate accessibility and reuse.
-The repository as a whole should have a project-level readme document and metadata to facilitate findability and meta-analyses. 
+The repository as a whole should have a project-level readme document and metadata to facilitate findability and meta-analyses.
+GitHub repositories can use a CITATION.cff file to embed citation metadata into the repository, while archived research products should use the Dublin Core metadata. 
 
 ### Research Publishing and Archiving
 
