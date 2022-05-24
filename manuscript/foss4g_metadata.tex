@@ -61,7 +61,7 @@
 100 - 200 words here  
 }
 
-\keywords{Manuscripts, Proceedings, ISPRS Archives, ISPRS Annals, Guidelines for Authors, Styleguide.}
+\keywords{Metadata, Open Science, Reproducibility}
 
 \maketitle
 
@@ -72,27 +72,26 @@
 
 \section{Introduction}\label{Introduction}
  
-Free and open source software for geospatial analysis (FOSS4G) supports burgeoning possibilities for practicing open and computationally reproducible human-environment and geographical research (Singleton et al 2016).
-Open and reproducible research practices may accelerate the pace of scientific discovery and enhance the scientific community's functions of knowledge verification, correction, and diffusion (Rey 2009, Kedron and Holler 2022).
+Free and open source software for geospatial analysis (FOSS4G) supports burgeoning possibilities for practicing open and computationally reproducible human-environment and geographical research \cite{Singleton2016}.
+Open and reproducible research practices may accelerate the pace of scientific discovery and enhance the scientific community's functions of knowledge verification, correction, and diffusion \cite{Rey2009,Kedron2022}.
 Geospatial metadata provides the foundation for reproducibility and open science and accordingly, requires more support in open source geospatial software.
-Following Wilson and others' (2021) five star guide for reproducibility, researchers can achieve four stars by conducting research with open data and software and documenting metadata according to the standards of the International Organization for Standardization (ISO) and OGC (Open Geospatial Consortium).
-For Tullis and Kar (2021), metadata is the key to documenting the provenance of research data artifacts, preserving information about every detail of data creation and transformation.
-Wilkinson and others' (2016) FAIR Guiding Principles for scientific data management enumerate functions for metadata in each of the principles for research: findable, accessible, interoperable, and reusable.
+Following the five star guide for reproducibility \cite{Wilson2021}, researchers can achieve four stars by conducting research with open data and software and documenting metadata according to the standards of the International Organization for Standardization (ISO) and OGC (Open Geospatial Consortium).
+For Tullis and Kar (2021), metadata is the key to documenting the provenance of research data artifacts, preserving information about every detail of data creation and transformation \cite{Tullis2021}. The FAIR Guiding Principles for scientific data management enumerate functions for metadata in each of the principles for research: findable, accessible, interoperable, and reusable \cite{Wilkinson2016}.
 However, open source geospatial software platforms generally lack the tools necessary for mainstreaming geospatial metadata into the full research workflow in support of more efficient research work and enhanced reproducibility and open science.
 This research on metadata is part of a larger human-environment and geographical sciences reproducibility and replicability (github.com/HEGSRR) project aimed at conducting formal reproduction and replication studies in the geographical sciences and integrating reproducibility into undergraduate and graduate level curricula in research methods.
 
-Following the National Academies of Science, Engineering and Medicine (NASEM, 2019), a reproduction study aims find the same results using the same data and methodology as a published study.
+Following the National Academies of Science, Engineering and Medicine \cite{NASEM2019}, a reproduction study aims find the same results using the same data and methodology as a published study.
 A replication study aims to test the findings of a published study by collecting new data and following a similar methodology, which may intentionally modify one or more research parameters.
 Together, reproduction and replication studies offer a deep understanding of the original research, test its credibility and generalizability, and enhance the self-corrective mechanisms of the scientific community.
 Metadata is information about data, including essential contextual information about the data's spatial structure, attributes, creation, maintenance, access, licensing, and provenance.
 
-A key component of reproducible research is an executable research compendium containing all of the data, code, and narrative required to compile a research publication from raw data (Nust and Pebesma 2021 and the Opening Reproducible Research Project).
+A key component of reproducible research is an executable research compendium containing all of the data, code, and narrative required to compile a research publication from raw data \cite{Nust2021}.
 Computational notebooks like Jupyter notebooks or R Markdown are commonly used to interweave narrative with code in executable compendia.
-In order to maximize replicability and inferential power, the research compendium should begin with a pre-registered research plan prior to data collection, requiring researchers to fully specify metadata for all of the research data and analyzes that they intend to create (Nosek et al. 2018).
+In order to maximize replicability and inferential power, the research compendium should begin with a pre-registered research plan prior to data collection, requiring researchers to fully specify metadata for all of the research data and analyzes that they intend to create \cite{Nosek2018}.
 
-It is recommended to store compendia in version tracking systems like Git in order to preserve a full history of changes to the research project.
+It is recommended to store compendiums in version tracking systems like Git in order to preserve a full history of changes to the research project.
 Finally, the compendium should be published parallel to academic publications so that other researchers can independently re-run, check and verify the analysis, or incorporate the research in future projects.
-In order to maximize the findability and legibility of the research compendium for both humans and machines, the overall repository and each of its components must be meticulously documented with metadata according to international standards (Wilkinson et al. 2016, Wilson et al. 2021).
+In order to maximize the findability and legibility of the research compendium for both humans and machines, the overall repository and each of its components must be meticulously documented with metadata according to international standards \cite{Wilkinson2016,Wilson2021}.
 
 In this three-part research paper, we focus on metadata in research compendia and related research products through all phases of the research workflow.
 First, we specify ideal requirements of geospatial metadata in support of reproducible research workflows and open science.
@@ -115,7 +114,7 @@ This research is supported by National Science Foundation project BCS-2049837.
 {
 	\begin{spacing}{1.17}
 		\normalsize
-		\bibliography{ISPRSguidelines_authors} % Include your own bibliography (*.bib), style is given in isprs.cls
+		\bibliography{foss4g_metadata_references} % Include your own bibliography (*.bib), style is given in isprs.cls
 	\end{spacing}
 }
 
