@@ -74,7 +74,10 @@
 \section{Introduction}\label{Introduction}
 
 Researchers working with geospatial data commonly find themselves spending less time and effort \textit{doing research}---observing, recording, and analyzing data---than they do reading and writing about their data.
-The principles of open science are also significantly increasing demands on researchers to create and maintain metadata in support of reproducibility, replicability, and meta-analyses (cite NASEM open science report). Prior to analysis, researchers using secondary data must scour metadata documentation and technical manuals for information about their data.
+Open science principles increase the demands on researchers to create and maintain metadata in support of reproducibility, replicability, research synthesis, and meta-analyses \citep{NASEM2019}.
+At the same time, the scientific community is lacking easy-to-use tools for annotating metadata \citep{NASEM2018}.
+
+Prior to analysis, researchers using secondary data must scour metadata documentation and technical manuals for information about their data.
 Researchers collecting primary data must painstakingly document data collection and human subjects protocols.
 Researchers pre-registering their studies must anticipate and record each procedure for data collection and analysis. During analysis, researchers should record data provenance with sufficient detail to communicate a complete data quality report and reproducible methodology.
 After analysis, researchers are increasingly required to archive data and results in a findable, accessible, interoperable, and reusable (FAIR) manner \citep{Wilkinson2016}.
@@ -90,9 +93,23 @@ Geospatial metadata provides the foundation for reproducibility and open science
 
 \section{Geospatial Metadata for Reproducible Open Science}\label{sec:Background}
 
+\subsection{Open Science Workflow}\label{sec:Workflow}
+
+The 2018 \citeauthor{NASEM2018} report \textit{Open Science by Design} envisions open science practices in all six phases of the research workflow: provocation, ideation, knowledge generation, validation, dissemination, and preservation.
+Researchers would benefit from open science in the \textbf{provocation} phase of reviewing literature and data through the enhanced findability and accessibility of publications and associated data and code.
+In the \textbf{ideation} phase, researchers investigate data, and plan, prototype, and preregister research designs.
+In the \textbf{knowledge generation} phase, researchers would use open source software tools to collect and analyze data in interoperable formats with sufficient documentation, metadata, and computational notebooks to enable future reuse and replication. 
+In the \textbf{validation} phase, researchers analyze, visualize, interpret, and validate results while sharing preliminary findings in working papers and conferences.
+In the \textbf{dissemination} phase, the research peer reviewed, revised, and published, ideally with associated data and code.
+Finally, in the \textbf{preservation} phase, the manuscripts, data, and code are placed in FAIR digital archives with final revisions of metadata.
+
 \subsection{Geospatial Metadata}\label{sec:Metadata}
 
-FGDC (Federal Geographic Data Committee) CSDGM (Content Standard for Digital Geospatial Metadata)
+Many disciplines lacking sufficient standards for data sharing, interoperability, and documentation \citep{NASEM2019}.
+However, the geographic sciences have the benefit of leaning on the efforts of individual states and regions' spatial data infrastructures (SDIs), including the Federal Geographic Data Committee's (FGDC) Content Standard for Digital Geospatial Metadata (CSDGM) in the United States, and the Infrastructure for Spatial Information in Europe (INSPIRE).
+Individual SDIs are increasingly following and harmonizing with the International Standards Organization \citep{ISO2014} series of geographic information metadata standards, starting with standard 19115-1. 
+The geographic sciences also have standard formats, protocols, and algorithms for storing, distributing, and analyzing geographic data---all coordinated by the Open Geospatial Consortium (OGC).
+
 
 ISO
 
@@ -232,6 +249,12 @@ GeoNode (3.2.0) Content management system uses pycsw and geoserver
 
 
 
+The idea is to plan for oppenness from the start of the research project
+
+Compendium / Research Project:
+OSF has project-level metadata, abstract
+GitHub has .cff citation file and main readme.md
+"Making data 'interoperable' and 'reusable' can only be achieved if the data are annotated with comprehensive, standardized, high-quality metadata. Again, the absence of necessary metadata standards, appropriate ontologies, and easy-to-use annotation tools is a significant barrier." (137-138)
 
 
 
