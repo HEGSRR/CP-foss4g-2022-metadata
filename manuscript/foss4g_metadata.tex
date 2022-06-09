@@ -59,10 +59,23 @@
 
 % KAO: Use times symbol
 \abstract{
-100 - 200 words here  
-}
+EDIT DOWN TO 200 WORDS
+In this three-part research paper, we focus on metadata in research compendia and related research products through all phases of the research workflow.
+First, we specify ideal requirements of geographic metadata in support of reproducible research workflows and open science.
+We consider metadata needs at each step of the research process, including proposal writing, pre-analysis registration, ethics review board approval, data collection and analysis, publishing, and reproducing published research.
+The metadata software needs assessment is based on literature review of reproducibility and open science, and on teaching and practising reproducibility with geographic methods.
 
-\keywords{Metadata, Open Science, Reproducibility}
+Second, we review the Dublin Core and International Organisation for Standardization (ISO) geographic metadata standards and popular open source platforms for geospatial research and their support for the requirements of geographic metadata articulated in the first part.
+The scope of the review includes metadata functionality available through spatial analysis software platforms, including R, Python, QGIS, GRASS and SAGA; and it also includes metadata or cataloguing tools, including GeoNetwork, GeoNode, the USGS Metadata Wizard, and mdeditor.
+
+Finally, we articulate a vision for open source geographic metadata software development in support of open and reproducible human-environment and geographical research.
+In this vision, metadata software tools shall integrate with executable research compendium to assist researchers with their workflow from inception to publishing and archiving.
+The vision builds off our HEGSRR project, in which we independently reproduce and replicate published studies with open source geographic software, integrate reproduction and replication studies into project-based geographic information science courses, and develop curricula and infrastructure for reproducible research.
+Each section of the paper is thus supplemented with experiences and examples drawn from the HEGSRR project.
+Of particular relevance, we have already completed seven reproduction or replication studies with graduate and undergraduate students using open source geospatial software, encountering numerous barriers caused by inadequate use or documentation of metadata in research planning, execution, and archiving.
+We have also developed a template Git repository compendium for reproducible research and prototyped its use in our studies and teaching, discovering software barriers to documenting metadata and opportunities to integrate metadata into more efficient and reproducible research practices.}
+
+\keywords{Metadata, Open Science, Reproducibility, Open Source GIS}
 
 \maketitle
 
@@ -112,29 +125,26 @@ We propose that formalising metadata documentation in this research phase could 
 
 \begin{table*}[h]
 	\centering
-		\begin{tabular}{|c|c|c|c|}\hline
-		   Requirement&Pre-registration&Proposal and DMPs&Human Subjects Protocol\\\hline
-		     Author / PI                            & yes & yes & yes \\
-		     Other Personnel                        & yes & yes & yes \\
-    		 Title                                  & yes & yes & yes \\
-    		 Abstract / Summary                     & yes & yes & yes \\
-    		 Temporal Extent                        & yes & yes & yes \\
-    		 Spatial Extent                         & yes & yes & yes \\
-    		 Hypotheses                             & yes & yes & yes \\
-    		 Sampling / Recruitment Protocol        & yes & yes & yes \\
-    		 Secondary data details                 & yes & yes & yes \\
-    		 Secondary data access / restrictions   & yes & yes & yes \\
-    		 Survey instrument                      & - & - & yes \\
-    		 Data collection methods                & yes & yes & yes \\
-    		 Data variables                         & yes & yes & yes \\
-    		 Data analysis methods                  & yes & - & - \\
-    		 Identifiable private information       & - & yes & yes \\
-    		 Anonymity / Confidentiality            & - & yes & yes \\
-    		 Data storage & security                & - & yes & yes \\
-    		 Data archiving & dissemination         & yes & yes & yes \\
-     		 Re-usable Content                      & - & - & yes \\
-    		 Encoding (XML, JSON, and/or YAML)      & - & - & yes \\
-    		 API                                    & - & - & - \\\hline
+		\begin{tabular}{|c|c|c|c|c|}\hline
+		   Requirement&Pre-registration&Proposal&DMPs&Human Subjects Protocol\\\hline
+		     Author / PI                            & yes & yes & - & yes \\
+		     Other Personnel                        & yes & yes & - & yes \\
+    		 Title                                  & yes & yes & - & yes \\
+    		 Abstract / Summary                     & yes & yes & - & yes \\
+    		 Temporal Extent                        & yes & yes & - & yes \\
+    		 Spatial Extent                         & yes & yes & - & yes \\
+    		 Hypotheses                             & yes & yes & - & yes \\
+    		 Sampling \& Recruitment Protocol        & yes & yes & - & yes \\
+    		 Secondary data details                 & yes & yes & - & yes \\
+    		 Secondary data access \& restrictions   & yes & yes & - & yes \\
+    		 Survey instrument                      & - & - & - & yes \\
+    		 Data collection methods                & yes & yes & - & yes \\
+    		 Data variables                         & yes & yes & yes & yes \\
+    		 Data analysis methods                  & yes & - & - & - \\
+    		 Identifiable private information       & - & - & yes & yes \\
+    		 Anonymity \& Confidentiality            & - & yes & yes & yes \\
+    		 Data storage \& security during research& - & yes & yes & yes \\
+    		 Data archiving \& dissemination         & yes & yes & yes & yes \\\hline
 		\end{tabular}
 	\caption{Ideation phase information requirements related to project and geographic metadata.}
 \label{tab:Ideation_Info}
@@ -215,21 +225,6 @@ In order to maximize replicability and inferential power, the research compendiu
 It is recommended to store compendiums in version tracking systems like Git in order to preserve a full history of changes to the research project.
 Finally, the compendium should be published parallel to academic publications so that other researchers can independently re-run, check and verify the analysis, or incorporate the research in future projects.
 In order to maximize the findability and legibility of the research compendium for both humans and machines, the overall repository and each of its components must be meticulously documented with metadata according to international standards \citep{Wilkinson2016,Wilson2021}.
-
-In this three-part research paper, we focus on metadata in research compendia and related research products through all phases of the research workflow.
-First, we specify ideal requirements of geographic metadata in support of reproducible research workflows and open science.
-We consider metadata needs at each step of the research process, including proposal writing, pre-analysis registration, ethics review board approval, data collection and analysis, publishing, and reproducing published research.
-The metadata software needs assessment is based on literature review of reproducibility and open science, and on teaching and practicing reproducibility with geographic methods.
-
-Second, we review the Dublin Core and International Organization for Standardization (ISO) geographic metadata standards and popular open source platforms for geospatial research and their support for the requirements of geographic metadata articulated in the first part.
-The scope of the review includes metadata functionality available through spatial analysis software platforms, including R, Python, QGIS, GRASS and SAGA; and it also includes metadata or cataloging tools, including GeoNetwork, GeoNode, the USGS Metadata Wizard, and mdeditor.
-
-Finally, we articulate a vision for open source geographic metadata software development in support of open and reproducible human-environment and geographical research.
-In this vision, metadata software tools shall integrate with executable research compendium to assist researchers with their workflow from inception to publishing and archiving.
-The vision builds off our HEGSRR project, in which we independently reproduce and replicate published studies with open source geographic software, integrate reproduction and replication studies into project-based geographic information science courses, and develop curricula and infrastructure for reproducible research.
-Each section of the paper is thus supplemented with experiences and examples drawn from the HEGSRR project.
-Of particular relevance, we have already completed seven reproduction or replication studies with graduate and undergraduate students using open source geospatial software, encountering numerous barriers caused by inadequate use or documentation of metadata in research planning, execution, and archiving.
-We have also developed a template Git repository compendium for reproducible research and prototyped its use in our studies and teaching, discovering software barriers to documenting metadata and opportunities to integrate metadata into more efficient and reproducible research practices.
 
 \subsection{What do we need from metadata software?}\label{metadataneeds}
 
