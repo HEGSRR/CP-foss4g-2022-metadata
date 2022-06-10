@@ -86,23 +86,59 @@ We have also developed a template Git repository compendium for reproducible res
 
 \section{Introduction}\label{Introduction}
 
-Open science is designed to expand the availability and usability of scientific research publications, data, and methods \citep{NASEM2018}.
-Open science principles are motivated by the desire to expand scientific knowledge and rigour by improving and accelerating scientific communication, enabling reproduction and replication studies, and enabling new questions based on synthesis and meta-analysis \citep{NASEM2018,NASEM2019}. 
+Can the scientific community expand knowledge production and the scope of inquiry, accelerate and improve scientific communication, and improve scientific rigour?
+These are the motivations and designs of open science principles---to expand the availability and usability of scientific research publications, data, and methods \citep{NASEM2018}, thereby making scientific studies more reproducible  and enabling new forms of inquiry based on synthesis and meta-analysis \citep{NASEM2018,NASEM2019}.
 However, one key barrier to reproducible open science is a lack of standardised metadata documentation for research projects and associated data, code, and processing environments (Ibid.).
 The National Academies of Sciences, Engineering and Medicine (NASEM) \textit{Open Science by Design} \citeyear{NASEM2018} report therefore calls for adherence to the FAIR principles \citep{Wilkinson2016} for sharing research data in a findable, accessible, interoperable, and reusable manner.
-According to the report, achieving FAIR principles for open science will require infrastructure---data repositories and easy-to-use metadata annotation software---and additional labour on the part of researchers to document metadata in final the preservation phase of the research work cycle \citep{NASEM2018}. 
-However, we propose that researchers should formally create and metadata starting from the inception phase of a research project and maintain metadata throughout the full research work cycle.
-Open source geospatial software can---and should---support metadata-rich research work cycles from inception through dissemination and preservation.
+According to the report, achieving FAIR principles for open science will require infrastructure---data repositories and easy-to-use metadata annotation software---and additional labour on the part of researchers to document metadata in final the preservation phase of the research life cycle \citep{NASEM2018}. 
+But, what if metadata inspired by FAIR principles have the potential to resolve  the reproducibility crisis in computational research, as \citep{Leipzig2021} suggest?
 
-Our proposal is based our experience conducting reproduction and replication studies and training geography students in reproducible research practices \citep{Kedron_Holler_Bardin_Hilgendorf_2022} and the literature on reproducibility in the geographic sciences.
-We suggest that rather than repeatedly writing about their data through all phases of a research work cycle, researchers could formalise metadata at the project inception, use the metadata to generate much of the documentation required throughout the research process, and use software to maintain and track changes in metadata throughout the research process.
-In the review sections below, we introduce open science research work cycles, review the important roles for metadata in reproducible open science, and provide an overview of the most important metadata standards.
-We then describe our methods for searching and selecting open source software tools for annotating and updating and the most desirable features of those tools for supporting the full research work cycle.
+We propose that researchers should formally create metadata from the beginning of the research life cycle and maintain metadata throughout the full research work cycle.
+Open source geographic information systems software should support metadata-rich research life cycles from inception through dissemination and preservation.
+
+Our proposal is based on reproducibility literature in the social and geographical sciences and on our experience conducting reproductions and replications of geographic research and training geography students in reproducible research practices \citep{Kedron_Holler_Bardin_Hilgendorf_2022}.
+In particular, we have developed templates for pre-analysis plan registrations, reproduction and replication study reports, and reproducible research compendiums \citep{Kedron_Holler_2022}, and we have applied the templates to seven reproduction and replication studies conducted with teams of students and and research assistants.
+We suggest that rather than repeatedly and redundantly writing about their data through all phases of a research work cycle, researchers could formalise metadata at the project inception, use the metadata for much of the documentation required throughout the research process, and use software to maintain and track changes in metadata throughout the research process.
+Furthermore, we anticipate that such a metadata-rich research life cycle would further enhance the quality and transparency of metadata in open science by more thoroughly and consistently recording information about data provenance, license, access, and distribution, and by supplanting for full access to restricted data.
+
+In the following section, we introduce the open science research life cycles while reviewing the role of metadata in each phase of research.
+We also review the most important metadata standards for documenting geographic research.
+We then describe our methods for selecting and reviewing open source software tools for annotating and maintaining metadata in support of metadata-rich research life cycles.
 We discuss the existing capabilities of open source software and conclude with suggested directions for future development in support of reproducible open science.
 
 \section{Geographic Metadata for Reproducible Open Science}\label{sec:Background}
 
-\subsection{Open Science Workflows}\label{sec:Workflow}
+Open science aims to enhance the transparency, accessibility, and reproducibility of scientific research \citep{NASEM2018}.
+In geographic information science, this can be achieved with open public domain data, open source GIS software, public research workflows, and peer review inclusive of data and workflows to the greatest extent permissible by data and software needs \citep{Singleton2016}. 
+Following the National Academies of Science, Engineering and Medicine \citep{NASEM2019}, a reproduction study aims find the same results using the same data and methodology as a published study.
+Once a study is reproducible, it becomes possible to reanalyse the original study design in a reanalysis by purposefully altering parameters or procedures \citep{Christensen2019}. 
+A replication study aims to test the findings of a published study by collecting new data and following a similar methodology \citep{NASEM2019}.
+Together, reproduction, reanalysis, and replication studies offer a deep understanding of the original research, test its credibility, and enhance the self-corrective mechanisms of the scientific community.
+Over a series of replication studies, alternative hypotheses can be tested across geographic contexts to develop generalizable theories through the accumulation of evidence \citep{Kedron_Holler_2022}.
+
+Open and reproducible science requires data to be findable, accessible, interoperable, and reusable (FAIR), and each of the four FAIR guiding principles require metadata \citep{Wilkinson2016, NASEM2018}.
+Metadata is information describing data, providing essential context about the data so that other users can find, access, and use the data appropriately.
+\citet{Kim1999} summarises seven essential components for geographic metadata:
+
+%\itemize
+\begin{enumerate}
+\setlength\itemsep{0em}\setlength\parskip{0em}\setlength\topsep{0em}\setlength\partopsep{0em}\setlength\parsep{0em} 
+\item{Identification, enabling cataloguing and search} 
+\item{Data quality, informing fitness for use}
+\item{Spatial data organisation, describing the data model and spatial support}
+\item{Spatial reference, describing the coordinate system and datum}
+\itme{Entity and attributes information, also known as a data dictionary}
+\item{Distribution, including license, data format, and access procedures}
+\item{Metadata reference about the author and date of the metadata itself}
+\end{enumerate}
+
+\citet{Schuurman2006} argue that these standardised metadata categories lack essential ontological context for data, including sampling method, attribute name definitions, measurement specifications, classification systems, data models, collection rationales, policy and legal context, measurement schemes, sampling, policy and legal constraints, and anecdotal information relevant for data use.
+More complete knowledge of data sources requires ontological and perhaps even ethnographic study of the social context in which data was created \citep{Schuurman2008}.
+In the context of metadata for open science and reproducibility, the extant international standards suffice for most purposes, while the full research publication and compendium associated with data are sufficiently flexible and detailed to provide the data's social and ontological context.
+However, according to \citet[137-8]{NASEM2018}, ``Making data `interoperable' and 'reusable' can only be achieved if the data are annotated with comprehensive, standardized, high-quality metadata. Again, the absence of necessary metadata standards, appropriate ontologies, and easy-to-use annotation tools is a significant barrier.''
+Although geography does have metadata standards (see section \ref{sec:Metadata}), open source geospatial software platforms may need improved tools necessary for mainstreaming geographic metadata into the full research life cycle.
+
+\subsection{Open Science Research Life Cycle}\label{sec:lifecycle}
 
 The 2018 \citeauthor{NASEM2018} report \textit{Open Science by Design} envisions open science practices in all six phases of the research workflow: provocation, ideation, knowledge generation, validation, dissemination, and preservation, while singling out the preservation phase for metadata documentation.
 
@@ -114,14 +150,21 @@ Researchers would also have more detailed insight into the data and methodology 
 
 In the \textbf{ideation} phase, researchers investigate data, and plan, prototype, and preregister research designs.
 Three different types of plans are required of ethical and open research in this phase: 1) protocols for research with human subjects for ethical review, 2) research proposals and their associated data management plans (DMPs), and 3) pre-registered analysis plans (see table \ref{tab:Ideation_Info}).
-In ethical research practices, researchers must propose their research protocol prior to collecting or analysing data, describe the analytical purpose of collecting the data, and explain in great detail how the data will be stored, protected, de-identified, and disseminated \citep{DHEW1978}.
-In research proposals and DMPs, researchers must describe how data will allow them to test hypotheses by measuring concepts therein, and describe in great detail how the data will be stored and disseminated.
-In deductive open science, researchers should strive to conduct objective unbiased studies by avoiding viewing or manipulating research data prior to registering an analysis plan.
-They should also register an analysis plan complete with descriptions of all planned data transformations and final data outputs.
-In sum, the ideation phase requires researchers to study complete metadata for any secondary data sources they plan to use, and and to specify metadata for any data they plan to create.
+
+In ethical research practices, researchers must propose their research protocol prior to collecting or analysing data, describe the analytical purpose of collecting the data, and explain how the data will be stored, protected, de-identified, and disseminated \citep{DHEW1978}.
+Data use agreements for secondary data sources are also be required.
+
+In research proposals and DMPs, researchers must describe how data will allow them to test hypotheses by measuring concepts therein, and describe how the data will be stored and disseminated \citep{NSF2021}.
+Research funding agencies increasingly expect data management plans to explain how data will be made available to the public according to open science principles. 
+
+In order to maximise replicability and inferential power, the ideation phase should include registration of a research plan (pre-registration) prior to data collection, requiring researchers to fully specify metadata for all of the research data and analyses that they intend to create \citep{Nosek2018}.
+In deductive open science, researchers should strive to conduct objective unbiased studies by avoiding viewing or manipulating research data prior to registering their analysis plan \cite{Nosek2018}.
+The plan should contain complete descriptions of all data, planned data transformations, and final analyses and outputs.
+In order to accomplish this goal, secondary data sources should have sufficiently documented metadata with which researchers can plan their study without inspecting the data values directly.
+
+In sum, the ideation phase requires researchers to study metadata for any secondary data sources they plan to use, and to specify metadata for any data they plan to create.
 In the current state of practice, this metadata documentation is required in narrative form in a variety of documents.
 We propose that formalising metadata documentation in this research phase could both mitigate redundancies and enhance transparency.
-
 
 \begin{table*}[h]
 	\centering
@@ -150,32 +193,55 @@ We propose that formalising metadata documentation in this research phase could 
 \label{tab:Ideation_Info}
 \end{table*}
 
+In the \textbf{knowledge generation} phase, researchers use open source software tools to collect and analyse data in inter-operable formats with sufficient documentation, metadata, and computational notebooks to enable future reuse and replication.
+
+Ideally, researchers will organise their materials and methods for computational research in a structured executable research compendium \citep{Singleton2016,Nust2021} containing all of the narrative, data, code, software, and computer scripts required to compile the final publication starting with raw data.
+Computational notebooks like Jupyter notebooks or R Markdown are commonly used to interweave narrative with code in executable compendia (ibid).
+It is recommended to store compendiums in version tracking systems like Git in order to preserve a full history of changes to the research project \citep{Stodden2014}.
+Ideally, compendiums should implement a routine structure for research components, including directories for procedures or code, documents, raw data, processed data, and results \cite{Kedron_Holler_2022,Christensen2019,Marwick2018}. In addition to this structure, the compendium components should be well-documented with metadata \cite{Kedron_Holler_2022,Marwick2018}.
 
 
-In the \textbf{knowledge generation} phase, researchers would use open source software tools to collect and analyse data in inter-operable formats with sufficient documentation, metadata, and computational notebooks to enable future reuse and replication. 
+During the knowledge generation phase, metadata records should be maintained and updated with complete provenance information on the origins of the data and a history of all data transformations \citep{NASEM2019,Tullis2021}.
+Provenance is essential for understanding the quality of data within the research and the quality and context of the research data if its to be reused elsewhere \citep{Tullis2021,Schuurman2006}.
+The complexity of computational research in geography implies that provenance metadata is a necessary precursor for communication and reproduction of research methodologies.
+Therefore, \citet{Anselin2014}, created a metadata system for spatial weights matrices in spatial statistics in a form that both records human-readable provenance and machine-readable instructions for reproducing the analysis.
+As such complex computational research methods diverge from the original pre-registered plan, Git can track changes to metadata updated during the knowledge generation phase, lending transparency to intended changes and unintended deviations.
+
 In the \textbf{validation} phase, researchers analyse, visualise, interpret, and validate results while sharing preliminary findings in working papers and conferences.
+At this phase, the overall project and any public project component can be registered and assigned a persistent link like the digital object identifier (DOI) through digital repositories like Open Science Framework (OSF) or figshare.
+Registration requires project-level metadata to enable archiving and searching.
+Although researchers may be reluctant or constrained to release complete data at this phase, metadata can be shared for project components that must remain private or embargoed.
+
 In the \textbf{dissemination} phase, the research is peer reviewed, revised, and published, ideally with associated data and code.
+A version of the research compendium should be made available for the peer review process \citep{Singleton2016}, complete with research data, procedures, and metadata.
+In response to reviews, any changes to the research procedures can ideally be documented and tracked through changes in metadata and release of a final version of the compendium.
+
 Finally, in the \textbf{preservation} phase, the manuscripts, data, and code are placed in FAIR digital archives with final revisions of metadata.
+In other words, an open access research compendium should be published and archived with metadata specifying access, licenses, data quality, and limitations. 
+\citep{Wilson2021} propose a five-star system for rating the reproducibility of such compendia.
+Publishing data and code with some metadata is only two-star level reproducibility: complete implementation of international metadata and encoding standards earns four stars.
+For example, researchers could earn four stars by storing data with Open Geospatial Consortium (OGC) standard formats, document metadata with ISO standards, and encode the metadata in XML.
+Documenting and containerizing the processing environment earns five.
 
-Prior to analysis, researchers using secondary data must scour metadata documentation and technical manuals for information about their data.
-Researchers collecting primary data must painstakingly document data collection and human subjects protocols.
-Researchers preregistering their studies must anticipate and record each procedure for data collection and analysis. 
-Ideally, researchers will preregister their research plans without examining data directly.
-In order to accomplish this goal, secondary data sources should have sufficiently documented metadata with which researchers can plan their study without inspecting the data values directly.
-During analysis, researchers should record data provenance with sufficient detail to communicate a complete data quality report and reproducible methodology.
-After analysis, researchers are increasingly required to archive data and results in a findable, accessible, interoperable, and reusable (FAIR) manner \citep{Wilkinson2016}.
+Due to the proprietary, private, or voluminous nature of some data, it may not be possible to release a fully reproducible research compendium.
+Researchers may need alter or fabricate alternative data for the purposes of reproducibility, e.g. through simulation, jittering, or sampling \citet{Tullis2021,Singleton2016}. 
+In this case, metadata is essential for documentation of original data, means for accessing original data, and methods for creating alternative demonstration data.
 
+In order to maximize the findability and legibility of the research compendium for both humans and machines, the overall repository and each of its components must be meticulously documented with metadata according to international standards \citep{Wilkinson2016,Wilson2021}.
+For instance, GitHub repositories have readme and citation files to facilitate this, while OSF projects have project-level metadata and the ability to register generate DOI persistent identifiers.
+
+
+ 
 \subsection{Metadata Standards for Geographic Research}\label{sec:Metadata}
 
-Many disciplines lacking sufficient standards for data sharing, interoperability, and documentation \citep{NASEM2019}.
-However, the geographic sciences have the benefit of leaning on the spatial data infrastructures (SDIs) of individual states and regions, including the Federal Geographic Data Committee's (FGDC) Content Standard for Digital geographic metadata (CSDGM) in the United States, and the Infrastructure for Spatial Information in Europe (INSPIRE).
+Many disciplines lack sufficient standards for data sharing, interoperability, and documentation \citep{NASEM2019}.
+The geographic sciences have standard formats, protocols, and algorithms for storing, distributing, and analysing geographic data---all coordinated by the Open Geospatial Consortium (OGC).
+However, the OGC has left metadata standards to the spatial data infrastructures (SDIs) of individual states and regions, including the Federal Geographic Data Committee's (FGDC) Content Standard for Digital geographic metadata (CSDGM) in the United States, and the Infrastructure for Spatial Information in Europe (INSPIRE) \cite{Kim1999,Bartha2011}
 Individual SDIs are increasingly following and harmonising with the International Standards Organization (ISO) series of geographic information metadata standards, especially the 19115 standard for geographic information metadata \citep{ISO2014} and the 19139 standard for encoding metadata in XML \citep{ISO2019}.
-The geographic sciences also have standard formats, protocols, and algorithms for storing, distributing, and analysing geographic data---all coordinated by the Open Geospatial Consortium (OGC).
+These standards are appropriate for individual geographic data layers.
+While the ISO standards are copyrighted and costly to purchase, researchers may access them through the many SDIs and open source geospatial software projects that have implemented them.
 
-INSPIRE (Infrastructure for Spatial Information in Europe) uses standards EN ISO 19115, EN ISO 19119, and ISO 15836 (Dublin
-Core). INSPIRE adds constraints to ISO 19115, e.g. requiring spatial and temporal extents and lineage statements, and at least one keyword must belong to the GEMET thesaurus (https://www.eionet.europa.eu/gemet). INSPRE required geographic metadata as of Article 5(1) of INSPIRE Directive 2007/2/EC.
-
-Dublin Core
+At the project level, research publications and compendia should ideally be documented with the Dublin Core\texttrademark{}  standard metadata elements. Relevant elements include Title, Subject keywords, description (abstract), Type, Coverage (geographic and temporal), Creator, Publisher, Contributor(s), Rights, Date, 
 
 %\itemize
 \begin{enumerate}
@@ -203,32 +269,39 @@ Dublin Core
 \item{Metadata contact}
 \end{enumerate}
 
-\subsection{Open Science and Reproducibility}\label{sec:Metadata}
+\section{Materials and Methods}\label{methods}
 
-FAIR, Reproducible, Metaanalyses, Preanalysis Registration
+In this section, we describe our approach for reviewing metadata capabilities of open source geographic information software.
 
-Following the five star guide for reproducibility \citep{Wilson2021}, researchers can achieve four stars by conducting research with open data and software and documenting metadata according to the standards of the International Organisation for Standardisation (ISO) and OGC (Open Geospatial Consortium).
-Metadata is the key to documenting the provenance of research data artifacts, preserving information about every detail of data creation and transformation \citep{Tullis2021}. The FAIR Guiding Principles for scientific data management enumerate functions for metadata in each of the principles for research: findable, accessible, interoperable, and reusable \citep{Wilkinson2016}.
-However, open source geospatial software platforms generally lack the tools necessary for mainstreaming geographic metadata into the full research workflow in support of more efficient research work and enhanced reproducibility and open science.
-According to \citet[137-8]{NASEM2018}, ``Making data `interoperable' and 'reusable' can only be achieved if the data are annotated with comprehensive, standardized, high-quality metadata. Again, the absence of necessary metadata standards, appropriate ontologies, and easy-to-use annotation tools is a significant barrier.'' (137-138)
-This research on metadata is part of a larger human-environment and geographical sciences reproducibility and replicability (github.com/HEGSRR) project aimed at conducting formal reproduction and replication studies in the geographical sciences and integrating reproducibility into undergraduate and graduate level curricula in research methods.
+\subsection{Open source geographic information systems}\label{software}
 
-Following the National Academies of Science, Engineering and Medicine \citep{NASEM2019}, a reproduction study aims find the same results using the same data and methodology as a published study.
-A replication study aims to test the findings of a published study by collecting new data and following a similar methodology, which may intentionally modify one or more research parameters.
-Together, reproduction and replication studies offer a deep understanding of the original research, test its credibility and generalizability, and enhance the self-corrective mechanisms of the scientific community.
-Metadata is information about data, including essential contextual information about the data's spatial structure, attributes, creation, maintenance, access, licensing, and provenance.
+Following \citet{Singleton2016}, we focus on open source software for the purposes of open science and reproducibility.
+We identified a short list of software to evaluate by searching for candidates on the FGDC's ISO geographic metadata Editors registry (https://www.fgdc.gov/metadata/iso-metadata-editor-review-v2), and the OSGEO Projects (https://www.osgeo.org/projects/)
 
-A key component of reproducible research is an executable research compendium containing all of the data, code, and narrative required to compile a research publication from raw data \citep{Nust2021}.
-Computational notebooks like Jupyter notebooks or R Markdown are commonly used to interweave narrative with code in executable compendia.
-In order to maximize replicability and inferential power, the research compendium should begin with a pre-registered research plan prior to data collection, requiring researchers to fully specify metadata for all of the research data and analyzes that they intend to create \citep{Nosek2018}.
 
-It is recommended to store compendiums in version tracking systems like Git in order to preserve a full history of changes to the research project.
-Finally, the compendium should be published parallel to academic publications so that other researchers can independently re-run, check and verify the analysis, or incorporate the research in future projects.
-In order to maximize the findability and legibility of the research compendium for both humans and machines, the overall repository and each of its components must be meticulously documented with metadata according to international standards \citep{Wilkinson2016,Wilson2021}.
+For example, we have excluded esri's robust metadata support , CatMDEdit is offically no longer maintained as of March 3, 2022. The most recent version (5.0) was released in 2014
+
+
+
+USGS Metadata Wizard (v 2.0.7, updated March 1, 2022) implements FGDC-CSDGM (Federal Geographic Data Committee) (Content Standard for Digital geographic metadata) metadata standards, allows customization of the default template, can validate records, can autopopulate geographic metadata and data dictionaries from data files, and allows batch processing with Python. Available at https://github.com/usgs/fort-pymdwizard with documentation at https://usgs.github.io/fort-pymdwizard/index.html
+
+mdEditor web-based editor at https://www.mdeditor.org/ 
+
+QGIS plugins include:
+- QSphere (6.2.2, August 12, 2021, https://qgis.projets.developpement-durable.gouv.fr/projects/qsphere)
+- MetaTools (0.3.1, March 18, 2016, https://github.com/nextgis/metatools)
+- GeoCat Bridge - facilitates publishing maps from QGIS as web services, including metadata. However, GeoCat is provided as fee-for-service.
+- PgMetadata (1.1.1, February 14, 2022) writes metadata to a PostGIS database and automatically derives spatial metadata from PostGIS, using fields compatible with ckan and Data Catalog Vocabulary (DCAT)
+
+GeoServer - OGC services provider https://geoserver.org/ 
+GeoNetwork - Catalog service
+pycsw - Python catalog service library
+GeoNode (3.2.0) Content management system uses pycsw and geoserver
+
 
 \subsection{What do we need from metadata software?}\label{metadataneeds}
 
-Based upon the review above, we have enumerated useful characteristics for open-source software in support of open and reproducible research (see table \ref{tab:Metadata_Software}).
+Based upon our review in section \ref{lifecycle} above, we have enumerated useful characteristics for open-source software in support of open and reproducible research (see table \ref{tab:Metadata_Software}).
 The specific characteristics fall into three main categories: (1) ease of use and start-up, (2) implementation of metadata standards, and (3) automated features to facilitate metadata management.
 
 First, Metadata software should be easy to set up and to use in order to ease the burden of metadata documentation and management on precious research resources.
@@ -312,44 +385,6 @@ This research is supported by National Science Foundation project BCS-2049837.
 		\bibliography{foss4g_metadata_references} % Include your own bibliography (*.bib), style is given in isprs.cls
 	\end{spacing}
 }
-
-\subsection{Identifying Software}\label{software}
-
-We identified a short list of software to evaluate by searching for candidates on the FGDC's ISO geographic metadata Editors registry ( https://www.fgdc.gov/metadata/iso-metadata-editor-review-v2), and OSGEO Projects (https://www.osgeo.org/projects/)
-
-
-For example, we have excluded esri's robust metadata support , CatMDEdit is offically no longer maintained as of March 3, 2022. The most recent version (5.0) was released in 2014
-
-
-
-USGS Metadata Wizard (v 2.0.7, updated March 1, 2022) implements FGDC-CSDGM (Federal Geographic Data Committee) (Content Standard for Digital geographic metadata) metadata standards, allows customization of the default template, can validate records, can autopopulate geographic metadata and data dictionaries from data files, and allows batch processing with Python. Available at https://github.com/usgs/fort-pymdwizard with documentation at https://usgs.github.io/fort-pymdwizard/index.html
-
-mdEditor web-based editor at https://www.mdeditor.org/ 
-
-QGIS plugins include:
-- QSphere (6.2.2, August 12, 2021, https://qgis.projets.developpement-durable.gouv.fr/projects/qsphere)
-- MetaTools (0.3.1, March 18, 2016, https://github.com/nextgis/metatools)
-- GeoCat Bridge - facilitates publishing maps from QGIS as web services, including metadata. However, GeoCat is provided as fee-for-service.
-- PgMetadata (1.1.1, February 14, 2022) writes metadata to a PostGIS database and automatically derives spatial metadata from PostGIS, using fields compatible with ckan and Data Catalog Vocabulary (DCAT)
-
-GeoServer - OGC services provider https://geoserver.org/ 
-GeoNetwork - Catalog service
-pycsw - Python catalog service library
-GeoNode (3.2.0) Content management system uses pycsw and geoserver
-
-
-
-The idea is to plan for openness from the start of the research project
-
-Compendium / Research Project:
-OSF has project-level metadata, abstract
-GitHub has .cff citation file and main readme.md
-
-
-
-
-
-
 
 \section*{APPENDIX (Optional)}\label{APPENDIX}
 
