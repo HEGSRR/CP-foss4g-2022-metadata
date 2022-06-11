@@ -1,0 +1,11 @@
+Software,Start-up,GUI Editor,Standards,Encoding,Cataloguing,Automated Geographic,Automated Attribute,Validator,Provenance
+mdEditor,very easy,yes,"ISO, FGDC",JSON,no,no,no,yes,no
+Metadata Wizard 2.0.7,very easy,yes,FGDC,XML,no,yes,yes,yes,no
+QGIS 3.24.3,easy,yes,none,XML,browser,yes,fields view,yes,no
+GRASS 7.8.5,easy,addon,addons for ISO,XML,no,yes,no,no,no
+SAGA 7.8.2,easy,no,none,no export,rasters only,yes,yes,no,yes
+Geometa 0.6-6,hard,no,ISO,XML,no,no,no,yes,no
+pygeometa 0.11.0,hard,no,ISO,"XML, YAML",no,no,no,?,no
+o2r-meta,hard,no,none,"XML, JSON",yes,yes,no,yes,no
+GeoNetwork 4.2.0,hard,yes,"Dublin Core, ISO","XML, MEF",no,no,no,yes,no
+GeoNode 3.3.2,very hard,yes,"Dublin Core, ISO, FGDC",XML,no,yes,yes,no,no
