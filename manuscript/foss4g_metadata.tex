@@ -1,6 +1,6 @@
 % Version 2020-12-15
 % update – 161114 by Ken Arroyo Ohori: made spacing closer to Word template throughout, put proper quotes everywhere, removed spacing that could cause labels to be wrong, added non-breaking and inter-sentence spacing where applicable, removed explicit newlines
-% update – 010819 by Dennis Wittich: made spacing and font size closer to Word template, updated references and refernces style
+% update – 010819 by Dennis Wittich: made spacing and font size closer to Word template, updated references and references style
 % update – 042319 by Dennis Wittich: font size of captions set to 'small', first author names are shortened, hyphenation fixed
 % update – 010620 by Dennis Wittich: Footnotes alignment set to left
 % update - 151220 by Clement Mallet: Template adapted for double blind full paper submissions
@@ -40,7 +40,7 @@
 
 % KAO: Remove extra spacing
 % Anonymous submissions, authors' names should not be visible
-\author{Joseph Holler\textsuperscript{1} and Peter Kedron\textsuperscript{2}}
+\author{J Holler\textsuperscript{1,}\thanks{Corresponding author}\ \ and P Kedron\textsuperscript{2}}
 
 % KAO: Remove extra newline
 % Anonymous submissions, authors' affiliations should not be visible
@@ -78,7 +78,7 @@ We conclude with a vision for software-supported metadata-rich open research pra
 \section{Introduction}\label{Introduction}
 
 Can the scientific community expand knowledge production and the scope of inquiry, accelerate and improve scientific communication, and improve scientific rigour?
-These are the motivations and designs of open science principles---to expand the availability and usability of scientific research publications, data, and methods \citep{NASEM2018}, thereby making scientific studies more reproducible  and enabling new forms of inquiry based on synthesis and meta-analysis \citep{NASEM2018,NASEM2019}.
+These are the motivations of open science principles---to expand the availability and usability of scientific research publications, data, and methods \citep{NASEM2018}, thereby making scientific studies more reproducible  and enabling new forms of inquiry based on synthesis and meta-analysis \citep{NASEM2018,NASEM2019}.
 However, one key barrier to reproducible open science is a lack of standardised metadata documentation for research projects and associated data, code, and processing environments (Ibid.).
 The National Academies of Sciences, Engineering and Medicine \citep{NASEM2018} \textit{Open Science by Design} report therefore calls for adherence to the FAIR principles \citep{Wilkinson2016} for sharing research data in a findable, accessible, interoperable, and reusable manner.
 According to the report, achieving FAIR principles for open science will require infrastructure---data repositories and metadata annotation software---and additional researcher labour to document metadata in final the preservation phase of the research life cycle \citep{NASEM2018}. 
@@ -87,7 +87,7 @@ Therefore, we argue that the crucial task of documenting and sharing data about 
 
 We propose that researchers formally utilise and create metadata from the inception of a research project and maintain metadata throughout the full research life cycle.
 Open source geographic information systems software should support metadata-rich research life cycles from inception through dissemination and preservation.
-These changes in research practices and infrastructure will directly increase the reproducibility of geographic research and indirectly increase the pace and credibility of knowledge production. 
+These changes in research practices and infrastructure should increase the reproducibility of geographic research and indirectly increase the pace and credibility of knowledge production. 
 
 Our proposal is based on a growing reproducibility literature in the social and geographical sciences and on our experience conducting reproductions and replications of geographic research and training geography students in reproducible research practices \citep{Kedron_Holler_Bardin_Hilgendorf_2022}.
 In particular, we have developed templates for pre-analysis plan registrations, reproduction and replication study reports, and reproducible research compendiums \citep{Kedron_Holler_2022}, and we have applied the templates to seven reproduction and replication studies conducted with teams of students and research assistants \citep{Kedron_Holler_Bardin_Hilgendorf_2022}.
@@ -110,7 +110,7 @@ Once a study is reproducible, it becomes possible to reanalyse the original stud
 Reanalysis studies provide insight into the sensitivity of original results to researcher decisions by testing the internal validity of the finding and partially demonstrating the where a finding sits within a universe of possible alternative analyses. 
 A replication study aims to test the findings of a published study by collecting new data and following a similar methodology \citep{NASEM2019}.
 Whereas a study may be reproducible if original data is provided, replication will require complete metadata in order to create new data following the same procedures \citep{Ostermann2017}.
-Some preliminary surveys and assessments of replicability and reproducibility in the geographic sciences have in fact excluded many studies from their assessments because so many are missing research components \citep{Ostermann2017,Konkol2019}.
+Preliminary assessments of replicability and reproducibility in the geographic sciences have excluded many studies because of missing research components \citep{Ostermann2017,Konkol2019}.
 From the remaining sample of publications, the majority of volunteered geographic information publications were not reproducible \citep{Ostermann2017} and the majority of spatial-temporal figures were not identically reproduced by provided code \citep{Konkol2019}.
 
 Together, reproduction, reanalysis, and replication studies can offer a deep understanding of the original research, test its credibility, and enhance the self-corrective mechanisms of the scientific community \citep{Christensen2019,NASEM2019}.
@@ -121,25 +121,13 @@ High quality metadata is also required to moving to the more complex processes o
 
 Open and reproducible science requires data to be findable, accessible, interoperable, and reusable (FAIR), and each of the four FAIR guiding principles require metadata \citep{Wilkinson2016, NASEM2018}.
 Metadata is information describing data, providing essential context about the data so that other users can find, access, and use the data appropriately.
-\citet{Kim1999} summarises seven essential categories of geographic metadata based on common standards as follows:
-\\
-%\itemize
-\begin{enumerate}
-\setlength\itemsep{0em}\setlength\parskip{0em}\setlength\topsep{0em}\setlength\partopsep{0em}\setlength\parsep{0em} 
-\item{Identification, enabling cataloguing and search} 
-\item{Data quality, informing fitness for use}
-\item{Spatial data organisation, describing the data model and spatial support}
-\item{Spatial reference, describing the coordinate system and datum}
-\item{Entity and attributes information, also known as a data dictionary}
-\item{Distribution, including license, data format, and access procedures}
-\item{Metadata about the metadata author and date}
-\end{enumerate}
+\citet{Kim1999} summarises seven essential categories of geographic metadata based on common standards: identification (title, keywords, authors), data quality, spatial data organisation (e.g. raster or vector model), spatial reference (coordinate system and datum), entity and attributes (data dictionary), distribution (contact, licenses, and fees), and metadata authorship
 
-\citet{Schuurman2006} and \citet{Comber2008} both argue that metadata lack sufficient social and ontological context to evaluate data usability and facilitate semantic interoperability.
-To make such an assessment, researchers need more information on data quality, sampling method, attribute name definitions, measurement specifications, classification systems, data models, collection rationales, and policy and legal context \citep{Schuurman2006}.
-More complete knowledge of data sources requires ontological and perhaps even ethnographic study of the social context in which data was created \citep{Schuurman2008}.
+\citet{Schuurman2006} and \citet{Comber2008} argue that metadata lack sufficient social and ontological context to evaluate data usability and facilitate semantic interoperability.
+Researchers need more information on data quality, sampling method, attribute name definitions, measurement specifications, classification systems, data models, collection rationales, and policy and legal context \citep{Schuurman2006}.
+This may require ontological and perhaps even ethnographic study of the social context in which data was created \citep{Schuurman2008}.
 In the context of metadata for open science and reproducibility, the most recent international standards for data (see section \ref{sec:Metadata}) have answered many of these critiques with metadata classes for measurement, lineage, data quality, and usage.
-For additional social, semantic, and ontological information, bundling or linking data with the publication and executable research compendium can add additional context.
+For additional social, semantic, and ontological information, bundling or linking data with publications and executable research compendiums should add substantial additional context for data reuse.
 
 The important lesson here is that the data, metadata, and publication should be bundled and linked together in the form of a compendium with persistent identifiers.
 However, according to \citet[137-8]{NASEM2018}, ``Making data `interoperable' and 'reusable' can only be achieved if the data are annotated with comprehensive, standardized, high-quality metadata... [T]he absence of necessary metadata standards, appropriate ontologies, and easy-to-use annotation tools is a significant barrier.''
@@ -323,6 +311,29 @@ Finally, o2r-meta \citep{nust_daniel_2021_5106499} is python software designed t
 Based upon our review in section \ref{sec:Background} above, we have enumerated useful characteristics for open-source software in support of open and reproducible research (see table \ref{tab:Metadata_Software} columns).
 The specific characteristics fall into three main categories: (1) ease of use and start-up, (2) implementation of metadata standards, and (3) automated features to facilitate metadata management.
 
+\begin{table*}[ht!]
+    \centering
+    \begin{tabular}{p{1.3cm}p{1.3cm}p{1.1cm}p{1.3cm}p{1.3cm}p{1.3cm}p{1.3cm}p{1.3cm}p{1.2cm}p{1.3cm}}
+    \hline
+         Software     & Start-up & GUI  & Standards & Encoding & Cataloguing & Automated   & Automated & Validate  & Provenance  \\
+                                &          &  Editor &        &        &     & Geographic  & Attribute &           &               \\ [1mm]
+        \hline
+        mdEditor                & very easy & yes & ISO, FGDC & JSON                & no            & no    & no    & yes & no  \\ [0.5cm]
+        Metadata Wizard 2.0.7   & very easy & yes & FGDC    & XML                  & no            & yes   & yes   & yes & no  \\ [0.5cm]
+        QGIS 3.24.3             & easy      & yes & none         & XML             & browser       & yes   & fields view & yes & no  \\ [0.5cm]
+        SAGA 7.8.2              & easy      & no & none          & none            & rasters only  & yes   & yes & no & yes  \\ [0.5cm]
+        GRASS 7.8.5             & easy-hard & addon & addons for ISO  & XML          & no            & yes   & no    & no & no \\ [0.5cm]
+        Geometa 0.6-6           & hard      & no & ISO  & XML                     & no            & no    & no & yes & no  \\ [0.5cm]
+        pygeometa 0.11.0        & hard      & no & ISO  & XML, YAML                     & no            & no    & no & --- & no  \\ [0.5cm]
+        o2r-meta                & hard      & no & none & XML, JSON                     & yes           & yes   & no & yes & no  \\ [0.5cm]
+        GeoNetwork 4.2.0        & hard      & yes & Dublin, ISO & XML         & no            & no    & no & yes & no \\ [0.5cm]
+        GeoNode 3.3.2           & very hard & yes & Dublin, ISO, FGDC & XML    & no            & yes   & yes & no & no  \\ 
+        \hline
+    \end{tabular}
+\caption{Spatial metadata software capabilities.}
+\label{tab:Metadata_Software}
+\end{table*}
+
 First, Metadata software should be easy to set up and to use in order to ease the burden of metadata documentation and management on precious research resources.
 Software support for metadata management varies tremendously with regard to set-up and installation.
 Standalone desktop metadata editors tend to be very easy to install and start using straight away, while internet-based metadata editing services require only a web browser and login.
@@ -346,29 +357,6 @@ If metadata is readable by computers with common parsers, then the metadata can 
 In addition, Git can track versions of text-based formats like Extensible Markup Language (XML), JavaScript Object Notation (JSON), and YAML Ain't Markup Language (YAML).
 This implies that as metadata changes over time, Git can be used to visualise differences in metadata over different phases of a research project, from pre-registration of the analysis plan to reporting results and finalising the peer review process.
 Git's difference visualisation could highlight changes in spatial extent, the data dictionary of variables to be collected or computed, protocols for access, and more---even for restricted datasets.
-
-\begin{table*}[ht!]
-    \centering
-    \begin{tabular}{p{1.3cm}p{1.3cm}p{1.1cm}p{1.3cm}p{1.3cm}p{1.3cm}p{1.3cm}p{1.3cm}p{1.2cm}p{1.3cm}}
-    \hline
-         Software     & Start-up & GUI  & Standards & Encoding & Cataloguing & Automated   & Automated & Validate  & Provenance  \\
-                                &          &  Editor &        &        &     & Geographic  & Attribute &           &               \\ [1mm]
-        \hline
-        mdEditor                & very easy & yes & ISO, FGDC & JSON                & no            & no    & no    & yes & no  \\ [0.5cm]
-        Metadata Wizard 2.0.7   & very easy & yes & FGDC    & XML                  & no            & yes   & yes   & yes & no  \\ [0.5cm]
-        QGIS 3.24.3             & easy      & yes & none         & XML             & browser       & yes   & fields view & yes & no  \\ [0.5cm]
-        SAGA 7.8.2              & easy      & no & none          & none            & rasters only  & yes   & yes & no & yes  \\ [0.5cm]
-        GRASS 7.8.5             & easy-hard & addon & addons for ISO  & XML          & no            & yes   & no    & no & no \\ [0.5cm]
-        Geometa 0.6-6           & hard      & no & ISO  & XML                     & no            & no    & no & yes & no  \\ [0.5cm]
-        pygeometa 0.11.0        & hard      & no & ISO  & XML, YAML                     & no            & no    & no & --- & no  \\ [0.5cm]
-        o2r-meta                & hard      & no & none & XML, JSON                     & yes           & yes   & no & yes & no  \\ [0.5cm]
-        GeoNetwork 4.2.0        & hard      & yes & Dublin Core, ISO & XML         & no            & no    & no & yes & no \\ [0.5cm]
-        GeoNode 3.3.2           & very hard & yes & Dublin Core, ISO, FGDC & XML    & no            & yes   & yes & no & no  \\ 
-        \hline
-    \end{tabular}
-\caption{Spatial metadata software capabilities.}
-\label{tab:Metadata_Software}
-\end{table*}
 
 Third, metadata software can automate the discovery, creation, and verification of metadata.
 In terms of discovery, software can catalogue data layers and partially automate documentation of geographic and attribute metadata.
@@ -408,7 +396,7 @@ Finally, the GeoNetwork and GeoNode content management systems have good support
 In a context in which researchers' time and software tools are already perceived as limitations on reproducible open science, it appears that there is an urgent need for a new open source software tool to facilitate geographic metadata authoring and management in a research compendium.
 There are also several existing open source projects from which design ideas and code should be useful.
 
-\subsection{Conclusions}
+\section{Conclusions}
 
 Geographic metadata is an essential component of open reproducible science.
 Metadata can also contribute to improved transparency and efficiency throughout the full research life cycle and there are currently a number of open source software tools for authoring and maintaining geographic metadata.
@@ -421,9 +409,8 @@ In the future, more advanced development should focus on recording provenance an
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{ACKNOWLEDGEMENTS}\label{ACKNOWLEDGEMENTS}
-This research is supported by National Science Foundation project BCS-2049837.
-We sincerely appreciate the hard work of our research assistants Derrick Burt, Drew An-Pham, and Junyi Zhou, and of all the students in our methods courses, who teach us as much as we have learned from them. 
-Responsibility for errors and omissions lies with the first author, and corrections and comments on the living version \citep{foss4g2022} of this paper are welcome.
+This research is supported by National Science Foundation project BCS-2049837 and made possible with the hard work of research assistants (Derrick Burt, Drew An-Pham, and Junyi Zhou) and the students in our methods courses.
+Responsibility for errors lies with the authors. Corrections and comments on a living version of this paper \citep{foss4g2022} are welcome.
 
 {
 	\begin{spacing}{1.17}
