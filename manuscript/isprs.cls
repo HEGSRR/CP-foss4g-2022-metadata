@@ -18,7 +18,7 @@
 \def\contentsname{Contents}
 \def\listfigurename{List of Figures}
 \def\listtablename{List of Tables}
-\def\refname{References}
+\def\refname{REFERENCES}
 \def\indexname{Index}
 \def\figurename{Figure}
 \def\tablename{Table}
