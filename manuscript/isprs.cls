@@ -18,7 +18,7 @@
 \def\contentsname{Contents}
 \def\listfigurename{List of Figures}
 \def\listtablename{List of Tables}
-\def\refname{REFERENCES}
+\def\refname{References}
 \def\indexname{Index}
 \def\figurename{Figure}
 \def\tablename{Table}
@@ -413,8 +413,8 @@
   \@starttoc{lot}}
 \let\l@table\l@figure
 
-\def\thebibliography#1{\section*{\expandafter\MakeUppercase\expandafter{\refname}%
-    \@mkboth{\MakeUppercase{\refname}}{\MakeUppercase{\refname}}}\list
+\def\thebibliography#1{\section*{\expandafter\MakeUppercase\expandafter{References}%
+    \@mkboth{\MakeUppercase{References}}{\MakeUppercase{References}}}\list
   {\@biblabel{\arabic{enumiv}}}{\settowidth\labelwidth{\@biblabel{#1}}%
     \leftmargin 0pt
     \labelwidth 0pt
