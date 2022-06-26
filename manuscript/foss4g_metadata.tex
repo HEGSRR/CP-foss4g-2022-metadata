@@ -16,16 +16,8 @@
 \usepackage[british]{babel} 
 \usepackage[hang]{footmisc}
 \usepackage[authoryear,round,longnamesfirst]{natbib}
-\renewcommand{\bibsection}{\section*{References}}
-%\bibliographystyle{isprs}
 \def\footnotemargin{1em} % added 08-01-2020 Dennis Wittich
-
-
-
-
-
-%\usepackage[authoryear]{natbib}
-%\def\bibhang{0pt}
+\def\bibhang{0pt}
 
 \geometry{a4paper, top=25mm, left=20mm, right=20mm, bottom=25mm, headsep=10mm, footskip=12mm} % added 27-02-2014 Markus Englich
 %\usepackage{enumitem}
@@ -421,6 +413,7 @@ Responsibility for errors lies with the authors. Corrections and comments on a l
 {
 	\begin{spacing}{1.17}
 		\normalsize
+		\renewcommand\refname{REFERENCES}
 		\bibliography{foss4g_metadata_references} 
 	\end{spacing}
 }
